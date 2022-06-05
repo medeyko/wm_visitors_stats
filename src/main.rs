@@ -6,10 +6,10 @@ fn main() -> Result<(), Box<dyn std::error::Error + 'static>> {
         "all", "wen", "wru", "wja", "wes", "wde", "wfr", "wzh", "wit", "wuk",
     ];
     // Countries accordinng to ISO 3166-1
-    const REGS: [&str; 36] = [
+    const REGS: [&str; 38] = [
         "ww", "su", "cw", "US", "JP", "DE", "GB", "IN", "RU", "FR", "IT", "CA", "PL", "ES", "TW",
-        "BR", "AU", "UA", "NL", "TR", "CZ", "FI", "IL", "KZ", "BY", "UZ", "AZ", "LT", "GE", "EE",
-        "AM", "LV", "KG", "MD", "TJ", "TM",
+        "BR", "AU", "UA", "NL", "HK", "TR", "CZ", "FI", "IL", "AT", "KZ", "BY", "UZ", "AZ", "LT",
+        "GE", "EE", "AM", "LV", "KG", "MD", "TJ", "TM",
     ];
     let ussr = [
         "RU", "UA", "BY", "MD", "LT", "LV", "EE", "AM", "GE", "AZ", "KZ", "TM", "UZ", "KG", "TJ",
@@ -49,7 +49,7 @@ fn main() -> Result<(), Box<dyn std::error::Error + 'static>> {
     for r in 0..REGS.len() {
         print!("{}", REGS[r]);
         for p in 0..PROJS.len() {
-            print!("{:7}", table[r][p] / 1000000);
+            print!("{:7}", (table[r][p] + 500000) / 1000000);
             print!("{:4}", (table[r][0] / 2 + 100 * table[r][p]) / table[r][0]);
             print!("{:4}", (table[0][p] / 2 + 100 * table[r][p]) / table[0][p]);
         }
