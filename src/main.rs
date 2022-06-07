@@ -1,10 +1,12 @@
 use std::fs;
 
 fn main() -> Result<(), Box<dyn std::error::Error + 'static>> {
+    // all - all Wikimedia projects, w - Wikipedia
     // Languages according to ISO 639-1
     const PROJS: [&str; 10] = [
         "all", "wen", "wru", "wja", "wes", "wde", "wfr", "wzh", "wit", "wuk",
     ];
+    // ww - world-wide, su - (former) Soviet Union, cw - collective West
     // Countries accordinng to ISO 3166-1
     const REGS: [&str; 38] = [
         "ww", "su", "cw", "US", "JP", "DE", "GB", "IN", "RU", "FR", "IT", "CA", "PL", "ES", "TW",
